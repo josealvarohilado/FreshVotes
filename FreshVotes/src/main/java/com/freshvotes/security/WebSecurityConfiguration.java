@@ -1,16 +1,21 @@
 package com.freshvotes.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
+	@Autowired // takes object and lets spring handle it
+	private UserDetailsService userDetailsService;
+
 	@Bean // allows to get access outside of file
 	public PasswordEncoder getPasswordEncoder() {
 		// password encryption
@@ -21,11 +26,15 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		//inMemoryAuthentication creates user in memory. Not for Production
-		auth.inMemoryAuthentication()
-			.passwordEncoder(getPasswordEncoder())
-			.withUser("user@gmail.com")
-			.password(getPasswordEncoder().encode("qwerty"))
-			.roles("USER");
+		//		auth.inMemoryAuthentication()
+		//			.passwordEncoder(getPasswordEncoder())
+		//			.withUser("user@gmail.com")
+		//			.password(getPasswordEncoder().encode("qwerty"))
+		//			.roles("USER");
+		
+		auth
+			.userDetailsService(userDetailsService)
+			.passwordEncoder(getPasswordEncoder());
 	}
 	
 	// Creates the roles
