@@ -31,13 +31,19 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	// Creates the roles
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
+		http
+			// CSRF cross site reforce forgery
+			// create a csrf token to protect from hackers
+			//	creates a random number as a token
+			// .csrf().disable()
 			.authorizeRequests() //creates the users 
 				.antMatchers("/").permitAll() // tells what to access
 				.anyRequest().hasRole("USER")
 				.and() // says that any other request needs a USER role
 			.formLogin()
-				.loginPage("/login").permitAll()
+				.loginPage("/login")
+				.defaultSuccessUrl("/dashboard")
+				.permitAll()
 				.and()
 			.logout()
 				.logoutUrl("/logout").permitAll();
