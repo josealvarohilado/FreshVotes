@@ -21,12 +21,12 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<name>org.eclipse.wst.validation.validationbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -39,4 +39,46 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>webapp</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>resources/application.properties</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/FreshVotes/src/main/resources/application.properties</locationURI>
+		</link>
+		<link>
+			<name>resources/static</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>resources/templates</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>resources/templates/dashboard.html</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/FreshVotes/src/main/resources/templates/dashboard.html</locationURI>
+		</link>
+		<link>
+			<name>resources/templates/index.html</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/FreshVotes/src/main/resources/templates/index.html</locationURI>
+		</link>
+		<link>
+			<name>resources/templates/login.html</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/FreshVotes/src/main/resources/templates/login.html</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

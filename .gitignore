@@ -6,3 +6,4 @@ FreshVotes/.mvn/wrapper/MavenWrapperDownloader.java
 FreshVotes/.gitignore
 target/
 .settings/
+bin/
